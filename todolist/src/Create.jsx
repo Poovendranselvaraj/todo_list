@@ -5,9 +5,12 @@ function Create() {
     const [task, setTask] = useState([])
     const handleAdd = () => {
         axios.post('http://localhost:3001/add', {task: task})
-        .then(result => console.log(result))
+        .then(result => {
+          location.reload()
+        })
+        
         .catch(err => console.log(err))
-    }
+    } 
   return (
     <div className='Create_form'>
       <input type="text" placeholder='Enter Task' onChange={(e) => setTask(e.target.value)}/>
