@@ -21,7 +21,7 @@ function Home() {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3001/update/`+id)
+    axios.delete(`http://localhost:3001/delete/`+id)
     .then(result => {
         location.reload()
     })
