@@ -2,3 +2,4 @@ node_modules
 
 server/.env
 Server/.env
+mongodb+srv://poovendranselvaraj333:poovi@cluster0.yramy.mongodb.net/

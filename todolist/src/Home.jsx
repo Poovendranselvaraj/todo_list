@@ -7,13 +7,13 @@ function Home() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/get`)
+    axios.get(`https://todo-list-vojs.onrender.com/get`)
       .then(result => setTodos(result.data))
       .catch(err => console.log(err));
   }, []);
 
   const handleEdit = (id) => {
-    axios.put(`http://localhost:3001/update/`+id)
+    axios.put(`https://todo-list-vojs.onrender.com/update/`+id)
       .then(result => {
           location.reload()
       })
@@ -21,7 +21,7 @@ function Home() {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3001/delete/`+id)
+    axios.delete(`https://todo-list-vojs.onrender.com/delete/`+id)
     .then(result => {
         location.reload()
     })
