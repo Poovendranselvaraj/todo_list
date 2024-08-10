@@ -1,12 +1,24 @@
 const express = require('express')
+
+
 const mongoose = require('mongoose')
 const cors = require('cors')
-const TodoModel= require('./Models/Todo')
-const app = express()
-app.use(cors())
-app.use(express.json())
 
-mongoose.connect('mongodb+srv://poovendranselvaraj333:poove@cluster0.waobb.mongodb.net/')
+const TodoModel= require('./Models/Todo')
+
+const app = express()
+
+
+app.use(cors())
+
+
+
+app.use(express.json())
+require('dotenv').config()
+DB_URL=process.env.DB_URL
+
+
+mongoose.connect(DB_URL)
 
 app.get('/get', (req, res) => {
     TodoModel.find()
